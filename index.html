@@ -5,15 +5,27 @@
     <title></title>
     <link rel="stylesheet" href="main.css" />
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
   </head>
   <body>
-    <h1>タイトル</h1>
-    <label for="avatar">Choose a picture:</label>
-    <input
-      type="file"
-      id="avatar"
-      name="avatar"
-      accept="image/png, image/jpeg"
-    />
+    <h1>QRコードリーダー</h1>
+    <div id="input">
+      <label for="image">画像を選択： </label>
+      <input
+        type="file"
+        id="image"
+        name="image"
+        accept="image/*"
+        onchange="loadLocalImage(arguments[0])"
+      />
+    </div>
+    <div id="check">
+      <canvas id="canvas" width="100" height="100"></canvas>
+    </div>
+    <div>
+      <button onclick="readQR()">QRコードを読み込む</button>
+      <p>解析結果：</p>
+      <p id="result"></p>
+    </div>
   </body>
 </html>

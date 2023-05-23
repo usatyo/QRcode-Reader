@@ -1,5 +1,5 @@
-let canvasWidth = 100;
-let canvasHeight = 100;
+let canvasWidth = 400;
+let canvasHeight = 400;
 let uploadImgSrc;
 
 // 画像を変更したときにその画像を読み取るスクリプト

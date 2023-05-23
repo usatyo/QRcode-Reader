@@ -3,43 +3,56 @@
   <!-- ウェブサイトのメタ情報 -->
   <head>
     <meta charset="utf-8" />
-    <title>QR code reader</title>
+    <title>QR Code Reader</title>
 
     <!-- cssを読み込み -->
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="step-1.css" />
+    <link rel="stylesheet" href="step-2.css" />
+    <link rel="stylesheet" href="step-3.css" />
 
     <!-- javascriptを読み込み -->
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+
+    <!-- フォントを読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&family=VT323&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <!-- ウェブサイト本体 -->
   <body>
     <!-- タイトル -->
-    <h1>QRコードリーダー</h1>
-
-    <!-- 画像を選択する場所 -->
-    <div id="input">
-      <label for="image">画像を選択： </label>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        accept="image/*"
-        onchange="loadLocalImage(arguments[0])"
-      />
-    </div>
+    <h1>QR Code Reader</h1>
 
     <!-- 画像のプレビューを表示 -->
     <div id="preview">
-      <canvas id="canvas" width="100" height="100"></canvas>
+      <canvas id="canvas" height="400" width="400"></canvas>
     </div>
 
-    <!-- QRコードの読み取り結果を表示 -->
     <div>
-      <button onclick="readQR()">QRコードを読み取る</button>
-      <p>読み取り結果：</p>
-      <p id="result"></p>
+      <!-- 画像を選択する場所 -->
+      <div id="input">
+        <h2 for="image">画像を選択</h2>
+        <label for="image">選択する</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onchange="loadLocalImage(arguments[0])"
+        />
+      </div>
+
+      <!-- QRコードの読み取り結果を表示 -->
+      <div>
+        <button onclick="readQR()">QRコードを読み取る</button>
+        <h2>読み取り結果</h2>
+        <p id="result">QRコードが存在しません</p>
+      </div>
     </div>
   </body>
 </html>

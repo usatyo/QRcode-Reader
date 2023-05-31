@@ -6,9 +6,10 @@ let uploadImgSrc;
 // 画像を変更したときにその画像を読み取る
 function loadLocalImage(e) {
   const canvas = document.getElementById("canvas");
+
   canvas.width = canvasWidth;
   canvas.height = canvasHeight;
-  
+
   // アップロードされている画像ファイルを fileData に入れる
   const fileData = e.target.files[0];
   const reader = new FileReader();
@@ -23,31 +24,33 @@ function loadLocalImage(e) {
 // canvas上に画像を表示する
 function canvasDraw() {
   const canvas = document.getElementById("canvas");
+
   const context = canvas.getContext("2d");
   context.clearRect(0, 0, canvasWidth, canvasHeight);
   const img = new Image();
   img.src = uploadImgSrc;
   img.onload = function () {
-    ctx.drawImage(
+    context.drawImage(
       img,
       0,
       0,
       canvasWidth,
       this.height * (canvasWidth / this.width)
-      );
-    };
-  }
-  
-  // 「QRコードを読み取る」ボタンの処理
-  // QRコードを読み取って表示する
-  function readQR() {
-    const canvas = document.getElementById("canvas");
-    const context = canvas.getContext("2d");
-    const result = document.getElementById("result");
-    const imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
-    const code = jsQR(imageData.data, imageData.width, imageData.height);
-    console.log(code);
-    if (!code) {
+    );
+  };
+}
+
+// 「QRコードを読み取る」ボタンの処理
+// QRコードを読み取って表示する
+function readQR() {
+  const canvas = document.getElementById("canvas");
+
+  const context = canvas.getContext("2d");
+  const result = document.getElementById("result");
+
+  const imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
+  const code = jsQR(imageData.data, imageData.width, imageData.height);
+  if (!code) {
     result.textContent = "QRコードが存在しません";
   } else {
     result.textContent = code.data;

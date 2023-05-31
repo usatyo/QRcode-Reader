@@ -18,7 +18,9 @@ body {
 }
 
 h1 {
-  font-size: 100px;
+
+  /* TODO: 文字のサイズを 100px に変更 */
+
   margin: 20px;
 }
 
@@ -30,8 +32,9 @@ input,
 }
 
 #preview {
-  padding: 50px;
-  margin: 50px;
+
+  /* TODO: 内側と外側にそれぞれ 50px ずつの余白を取る */
+
 }
 
 label {

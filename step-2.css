@@ -9,7 +9,9 @@
 */
 
 * {
-  font-family: "Noto Sans JP";
+
+  /* TODO: フォントを Noto Sans JP に変更 */
+
   color: rgb(21, 99, 99);
 }
 
@@ -31,9 +33,13 @@ h1 {
 }
 
 canvas {
-  background-color: white;
+
+  /* TODO: 背景色を白に変更 */
+
 }
 
 #file-upload-button {
-  background-color: white;
+
+  /* TODO: 背景色を白に変更 */
+
 }

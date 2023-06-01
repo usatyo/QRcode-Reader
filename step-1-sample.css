@@ -1,0 +1,46 @@
+/* 
+
+- 中央揃え
+- 余白追加
+- フォントサイズ調整
+
+*/
+
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+
+  /* TODO: 文字のサイズを 100px に変更 */
+
+  margin: 20px;
+}
+
+h2,
+button,
+input,
+#result {
+  margin: 10px 0;
+}
+
+#preview {
+
+  /* TODO: 内側と外側にそれぞれ 50px ずつの余白を取る */
+
+}
+
+label {
+  display: none;
+}
+
+label, p {
+  font-size: 18px;
+}
